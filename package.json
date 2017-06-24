@@ -1,0 +1,15 @@
+{
+  "name": "xwebpack",
+  "version": "1.0.0",
+  "description": "webpack extensions",
+  "keywords": [
+    "webpack",
+    "extensions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OleksandrTheGreat/webpack.git"
+  },
+  "author": "OleksandrTheGreat",
+  "license": "ISC"
+}
