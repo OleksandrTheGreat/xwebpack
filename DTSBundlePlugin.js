@@ -16,7 +16,7 @@ function bundle(targetDirPath, dtsBundlePath) {
       stat = fs.statSync(itemPath);
 
     if (stat.isDirectory())
-      bundle(itemPath, distPath);
+      bundle(itemPath, dtsBundlePath);
 
     if (item.indexOf('.d.ts') < 0 || item == 'index.d.ts')
       return;
