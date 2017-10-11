@@ -4,7 +4,6 @@ function DTSBundlePlugin(options) {
   this.options = options;
 }
 
-//TODO: cut "import {...} ..."
 function bundle(targetDirPath, dtsBundlePath) {
 
   var items = fs.readdirSync(targetDirPath);
@@ -21,7 +20,10 @@ function bundle(targetDirPath, dtsBundlePath) {
     if (item.indexOf('.d.ts') < 0 || item == 'index.d.ts')
       return;
 
-    fs.appendFileSync(dtsBundlePath, fs.readFileSync(itemPath));
+    let content = fs.readFileSync(itemPath, 'utf8');
+    content = content.replace(/import .*/, '');
+
+    fs.appendFileSync(dtsBundlePath, content, 'utf8');
   });
 };
 
