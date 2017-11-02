@@ -1,17 +1,17 @@
 const copy = require('xfs/copy.js');
 
 function CopyPlugin(options) {
-  this.options = options;
+    this.options = options;
 }
 
-CopyPlugin.prototype.apply = function (compiler) {
+CopyPlugin.prototype.apply = function(compiler) {
 
-  var options = this.options;
+    var options = this.options;
 
-  compiler.plugin('done', function () {
+    compiler.plugin('done', function() {
 
-    copy.sync(options.from, options.to);
-  });
+        copy.sync(options.from, options.to, options.move);
+    });
 };
 
 module.exports = CopyPlugin;
