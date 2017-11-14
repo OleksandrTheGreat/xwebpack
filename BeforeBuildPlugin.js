@@ -6,7 +6,7 @@ BeforeBuildPlugin.prototype.apply = function(compiler) {
 
     var run = this.run;
 
-    compiler.plugin('run', function() {
+    compiler.plugin('compile', function() {
         run();
     });
 };
